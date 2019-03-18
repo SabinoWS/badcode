@@ -3,6 +3,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Vector;
 
+import sun.invoke.empty.Empty;
+
 /**
  * Relatório de pessoas
  * @author Deus
@@ -20,6 +22,7 @@ public class report_de_pessoas {
 	public static void print_e_vai(Vector paramL){
 		
 		String dados;
+		_s = "";
 		
 		for (int i = 0; i < paramL.size(); i++) {
 			
@@ -29,16 +32,19 @@ public class report_de_pessoas {
 			
 			dados = p.name;
 			
-			if(!erro.isEmpty())
+			if(!erro.isEmpty()) {
+				System.out.print(erro.toString() + "\n\n");
 				continue;
+			}
 			
 			if (i>0)
 				_s += ", " + dados;
 			else
-				_s = dados;			
+				_s = dados;
 		}
-
-		System.out.print(_s);
+		
+		if (!_s.isEmpty())
+			System.out.print(_s);
 	}
 	
 	/**
@@ -57,7 +63,7 @@ public class report_de_pessoas {
 		p.telefonesFixos = telefonesFixos;
 		
 		ArrayList<String> telefonesCelulares = new ArrayList<String>();
-		telefonesCelulares.add("8765343");
+		telefonesCelulares.add("1234567890");
 		p.telefonesCelulares = telefonesCelulares;
 		
 		v.add(p);
@@ -71,7 +77,7 @@ public class report_de_pessoas {
 		p2.telefonesFixos = telefonesFixos;
 		
 		ArrayList<String> telefonesCelulares2 = new ArrayList<String>();
-		telefonesCelulares2.add("8765343");
+		telefonesCelulares2.add("123456789");
 		p2.telefonesCelulares = telefonesCelulares2;
 		
 		v.add(p2);
