@@ -19,19 +19,25 @@ public class report_de_pessoas {
 	 */
 	public static void print_e_vai(Vector paramL){
 		
+		String dados;
+		
 		for (int i = 0; i < paramL.size(); i++) {
 			
 			Pessoa p = (Pessoa) paramL.get(i);
 			Validation validador = new Validation();
 			List<String> erro = validador.validaPessoa(p);
 			
+			dados = p.name;
+			
 			if(!erro.isEmpty())
 				continue;
 			
-		    _s += ", " + p.name;			
+			if (i>0)
+				_s += ", " + dados;
+			else
+				_s = dados;			
 		}
 
-		_s = _s.substring(2); 
 		System.out.print(_s);
 	}
 	
@@ -45,13 +51,32 @@ public class report_de_pessoas {
 		Pessoa p = new Pessoa();
 		p.name = "Fulano";
 		p.cpf = "0033435457";
-		ArrayList<String> pessoaTelefonesFixos = new ArrayList<String>();
-		pessoaTelefonesFixos.add("8765343");
-		p.telefonesCelulares = pessoaTelefonesFixos;
+		
+		ArrayList<String> telefonesFixos = new ArrayList<String>();
+		telefonesFixos.add("8765343");
+		p.telefonesFixos = telefonesFixos;
+		
+		ArrayList<String> telefonesCelulares = new ArrayList<String>();
+		telefonesCelulares.add("8765343");
+		p.telefonesCelulares = telefonesCelulares;
+		
 		v.add(p);
 		
-		print_e_vai(v);
+		Pessoa p2 = new Pessoa();
+		p2.name = "Fulano 2";
+		p2.cpf = "0033435457";
 		
+		ArrayList<String> telefonesFixos2 = new ArrayList<String>();
+		telefonesFixos2.add("8765343");
+		p2.telefonesFixos = telefonesFixos;
+		
+		ArrayList<String> telefonesCelulares2 = new ArrayList<String>();
+		telefonesCelulares2.add("8765343");
+		p2.telefonesCelulares = telefonesCelulares2;
+		
+		v.add(p2);
+		
+		print_e_vai(v);
 	}
 
 }
