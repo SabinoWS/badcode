@@ -30,17 +30,18 @@ public class report_de_pessoas {
 			Validation validador = new Validation();
 			List<String> erro = validador.validaPessoa(p);
 			
-			dados = p.name;
+			dados = "\n" +
+		    		"Nome: " + p.name + "\n" +
+		    		"Fone: " + p.telefonesCelulares.get(0) + "\n" +
+		    		"CPF : " + p.cpf + "\n"
+		    		;
 			
 			if(!erro.isEmpty()) {
-				System.out.print(erro.toString() + "\n\n");
+				System.out.print(erro.toString() + "\n");
 				continue;
 			}
 			
-			if (i>0)
-				_s += ", " + dados;
-			else
-				_s = dados;
+			_s += dados;
 		}
 		
 		if (!_s.isEmpty())
@@ -58,10 +59,6 @@ public class report_de_pessoas {
 		p.name = "Fulano";
 		p.cpf = "34252203066";
 		
-		ArrayList<String> telefonesFixos = new ArrayList<String>();
-		telefonesFixos.add("8765343");
-		p.telefonesFixos = telefonesFixos;
-		
 		ArrayList<String> telefonesCelulares = new ArrayList<String>();
 		telefonesCelulares.add("1234567890");
 		p.telefonesCelulares = telefonesCelulares;
@@ -72,10 +69,6 @@ public class report_de_pessoas {
 		p2.name = "Fulano 2";
 		p2.cpf = "0033435457";
 		
-		ArrayList<String> telefonesFixos2 = new ArrayList<String>();
-		telefonesFixos2.add("8765343");
-		p2.telefonesFixos = telefonesFixos;
-		
 		ArrayList<String> telefonesCelulares2 = new ArrayList<String>();
 		telefonesCelulares2.add("123456789");
 		p2.telefonesCelulares = telefonesCelulares2;
@@ -84,7 +77,6 @@ public class report_de_pessoas {
 		
 		print_e_vai(v);
 	}
-
 }
 
  class Pessoa{

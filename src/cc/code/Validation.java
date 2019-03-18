@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Validation {
 
-protected List<String> validaPessoa(Pessoa pessoa) {
+	protected List<String> validaPessoa(Pessoa pessoa) {
 		
 		List<String> constraints = new ArrayList<String>();
 		
