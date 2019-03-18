@@ -52,11 +52,9 @@ public class CPF {
       //comparar o digito verificador do cpf com o primeiro resto + o segundo resto.
       return nDigVerific.equals(nDigResult);
    }
-
    
    public static void main(String[] args) {
       System.out.println( CPF("04624193806") );
    }
-   
 
 }

@@ -12,8 +12,11 @@ protected List<String> validaPessoa(Pessoa pessoa) {
 		if (pessoa == null) {
 			constraints.add("Erro - Pessoa inválida");
 		} else {
-			if (pessoa.cpf == null || pessoa.cpf.isEmpty())
-				constraints.add("Erro - CPF inválido");
+			if (pessoa.cpf != null || !pessoa.cpf.isEmpty()) {
+				if(!CPF.CPF(pessoa.cpf)) {
+					constraints.add("Erro - CPF inválido");
+				}
+			}
 					
 			if (pessoa.name == null || pessoa.name.isEmpty())
 				constraints.add("Erro - Nome inválido");

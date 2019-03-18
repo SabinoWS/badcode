@@ -56,7 +56,7 @@ public class report_de_pessoas {
 		
 		Pessoa p = new Pessoa();
 		p.name = "Fulano";
-		p.cpf = "0033435457";
+		p.cpf = "34252203066";
 		
 		ArrayList<String> telefonesFixos = new ArrayList<String>();
 		telefonesFixos.add("8765343");
